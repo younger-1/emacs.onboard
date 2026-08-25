@@ -224,9 +224,6 @@ Cancel the previous one if present."
 ;; Don't waste battery on native compilation?
 (setopt native-comp-async-on-battery-power nil)
 
-;; Compiler optimization level; default 2
-(setopt native-comp-speed 3)
-
 ;; Following options are not set if Emacs starts via "emacs --debug-init"
 (unless init-file-debug
 
