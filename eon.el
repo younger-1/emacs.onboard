@@ -10,7 +10,7 @@
 ;;    ▒░▒░▒░  ▒░      ▒░ ▒░▒░▒░▒░     ▒░▒░▒░  ▒░      ▒░ ▒░      ▒░ ▒░▒░▒░▒░
 ;;
 ;;
-;; Version: 2.6.17
+;; Version: 2.6.18
 ;; URL: https://github.com/monkeyjunglejuice/emacs.onboard
 ;; Package: eon
 ;; Package-Requires: ((emacs "30.1"))
@@ -41,31 +41,60 @@
 ;; It stays close to vanilla Emacs, but offers convenience and a better
 ;; user experience, while only relying on built-in packages.
 ;;
-;; Keybindings:
+;; - Keybindings:
 ;;
 ;; "M-x"  Show all commands
 ;;        – hold down the "Meta key" and press <x>
-;;        – the "Meta key" is usually <Alt> on Linux/Windows and <Option> on Mac
+;;        – the "Meta key" is usually <ALT> on Linux/Windows and <OPT> on macOS
 ;;
 ;; "C-g"  Get out! Press <Ctrl>+<g> to cancel whatever happens – or hit 3x <ESC>
 ;;
-;; "<leader> x t"  Toggle between dark and light theme
+;; - Leader keys:
+;; Emacs ONBOARD comes with a pre-configured leader- and local leader key.
 ;;
-;; Examples:
+;; The leader key groups frequently used keybindings in a quickly accessible,
+;; menu-like structure. You can reach the leader key menu via:
+;; "C-,"     in graphical Emacs;
+;; "C-z"     if Emacs runs within a terminal emulator.
 ;;
-;; "M-x eon-"                      Show all commands defined by Emacs ONBOARD
-;; "M-x eon-goto-init-file"        Visit main config file: .emacs or init.el
-;; "M-x check-parens"              Check if all parens match in Emacs Lisp code
-;; "M-x help"                      Reach the ultimate help menu
+;; The local leader key provides a selection of commonly used keybindings for
+;; specific modes. Reach it either via:
+;; "C-, C-," in graphical Emacs
+;;           hold down <CTRL> (CMD on macOS) and hit <,> key 2 times;
+;; "C-z C-z" in the terminal
+;;           hold down <CTRL> (CMD on macOS) and hit <z> key 2 times.
 ;;
-;; "C-h o" Place the cursor behind a keyword, function, variable or other symbol
-;;         to issue the command `describe-symbol' via keybinding
-;;         and view the symbol's documentation
+;; You can change these keybindings and more - customize the variables
+;; `eon-leader-key' and `eon-localleader-key' via "<leader> x C",
+;; "M-x customize-variable", or "M-x eon-customize-group RET".
+;; Or search for the section LEADER-KEY / LOCAL LEADER-KEY and KEYMAPS
+;; for in-depth documentation.
 ;;
-;; "M-;"   Comment/uncomment a selected piece of text or code
+;; - Examples:
 ;;
-;;; Please report bugs and issues here:
+;; "M-x eon-"          Show all commands defined by Emacs ONBOARD
+;; "M-x check-parens"  Check if all parens match in Emacs Lisp code
+;; "M-x help"          Reach the ultimate help menu
+;; "M-;"               Comment/uncomment a selected piece of code
+;; "C-h o"             Place the cursor behind a keyword, function, variable or
+;;                     other symbol to issue the command `describe-symbol'
+;;                     via keybinding and read the symbol's documentation
+;; "<leader> f i"      Visit your main config file (.emacs or init.el)
+;; "<leader> x t"      Toggle between dark and light theme
+;; "<leader> f f"      Open a file in a buffer
+;; "<leader> f s"      Save a buffer (safes the file)
+;; "<leader> b k"      Kill a buffer (closes the file)
+;; "<leader> d"        Open a directory in the file manager
+;; "<leader> w s"      Split window downwards
+;; "<leader> w S"      Split window to the right
+;; "<leader> w w"      Switch to the next window
+;; "<leader> q q"      Quit Emacs
+;;
+;; - Something's not right?
+;;
+;; Please report bugs and issues here:
 ;; <https://github.com/monkeyjunglejuice/emacs.onboard/issues>
+;; or send an email to <monkeyjunglejuice@pm.me>
 ;;
 ;;; Code:
 
