@@ -1619,7 +1619,7 @@ Some themes may come as functions -- wrap these ones in lambdas."
 (add-hook 'minibuffer-setup-hook (lambda () (setq-local truncate-lines t)))
 
 ;; For mouse commands to ask questions, use a dialog box instead of minibuffer?
-(setopt use-dialog-box nil)
+(setopt use-dialog-box t)
 
 ;; Grow and shrink the minibuffer according to its lines of content?
 ;; If you experience too much jumping, set it to 'grow-only.
