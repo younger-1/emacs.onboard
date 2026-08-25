@@ -118,6 +118,7 @@
 ;; "Garbage Collection Magic Hack" by Andrea Corallo <akrl@sdf.org> v0.2.1
 ;; Original: <https://gitlab.com/koral/gcmh> License: GPL-3.0-OR-LATER
 ;; Discussion: <https://news.ycombinator.com/item?id=39190110>
+;; TODO Might become redundant when new garbage collector lands with Emacs 32
 
 (defgroup eon-gcmh nil
   "Garbage collection tuning."
@@ -792,7 +793,7 @@ a `cursor-type' or nil. The first non-nil return wins.")
   :group 'eon)
 
 ;; Minor mode keymap that installs the leader prefix with higher precedence
-;; than major-mode keymaps (e.g. Org binding `C-,').
+;; than major-mode keymaps (e.g. avoids clash with Org binding `C-,').
 (defvar-keymap eon-leader-mode-map
   :doc "Keymap for `eon-leader-mode'.")
 
@@ -989,7 +990,7 @@ Use `eon-customize-group' to change, or `setopt' from Lisp."
 (defvar-keymap ctl-z-x-map   :doc "Misc")
 (defvar-keymap ctl-z-ret-map :doc "Bookmark")
 
-;; Default Top-level leader keymap, referencing the sub-keymaps
+;; Default top-level leader keymap, referencing the sub-keymaps
 ;; TODO Rename ctl-z-.*-map to eon-leader-default-.*-map, because
 ;; the ctl-z-... part is merely historical and has no meaning anymore.
 
@@ -1731,6 +1732,7 @@ Some themes may come as functions -- wrap these ones in lambdas."
   ;; contain whitespace and prevents the *Completions* buffer from popping up.
   (keymap-set icomplete-fido-mode-map "SPC" #'self-insert-command))
 
+;; Enable the mode
 (fido-vertical-mode 1)
 
 ;; _____________________________________________________________________________
@@ -3095,8 +3097,8 @@ The value must be a key in `eon-eww-user-agent-profiles'."
 
 (defun eon-eww-user-agent (&optional profile)
   "Select EWW user-agent PROFILE.
-PROFILE must name a key in `eon-eww-user-agent-profiles'.  When nil, use
-`eon-eww-user-agent-profile'.  PROFILE may also be t, which selects the default
+PROFILE must name a key in `eon-eww-user-agent-profiles'. When nil, use
+`eon-eww-user-agent-profile'. PROFILE may also be t, which selects the default
 EWW user-agent according to `url-privacy-level'.
 When called interactively, select PROFILE with completion."
   (interactive
