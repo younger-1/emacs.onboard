@@ -3793,6 +3793,20 @@ Returns an alist of (LANG . STATUS) where STATUS is one of:
   (org-babel-do-load-languages 'org-babel-load-languages '((emacs-lisp . t))))
 
 ;; _____________________________________________________________________________
+;;; MARKDOWN
+
+;; Markdown mode is experimental in Emacs 31, therefore there's need to opt-in.
+(when (= emacs-major-version 31)
+
+  (autoload 'markdown-ts-mode "markdown-ts-mode" nil t)
+
+  (dolist (re '("\\.md\\'" "\\.mdx\\'" "\\.markdown\\'"))
+    (add-to-list 'auto-mode-alist (cons re 'markdown-ts-mode)))
+
+  (with-eval-after-load 'markdown-ts-mode
+    (require 'markdown-ts-mode-x)))
+
+;; _____________________________________________________________________________
 ;;; LISP
 ;; <https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Executing-Lisp>
 
