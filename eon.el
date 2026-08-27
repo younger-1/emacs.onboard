@@ -60,9 +60,9 @@
 ;; The local leader key provides a selection of commonly used keybindings for
 ;; specific modes. Reach it either via:
 ;; "C-, C-," in graphical Emacs
-;;           hold down <CTRL> (CMD on macOS) and hit <,> key 2 times;
+;;           hold down <CTRL> (CMD on macOS) and hit the <,> key 2 times;
 ;; "C-z C-z" in the terminal
-;;           hold down <CTRL> (CMD on macOS) and hit <z> key 2 times.
+;;           hold down <CTRL> (CMD on macOS) and hit the <z> key 2 times.
 ;;
 ;; You can change these keybindings and more - customize the variables
 ;; `eon-leader-key' and `eon-localleader-key' via "<leader> x C",
@@ -79,8 +79,8 @@
 ;; "C-h o"             Place the cursor behind a keyword, function, variable or
 ;;                     other symbol to issue the command `describe-symbol'
 ;;                     via keybinding and read the symbol's documentation
-;; "<leader> f i"      Visit your main config file (.emacs or init.el)
 ;; "<leader> x t"      Toggle between dark and light theme
+;; "<leader> f i"      Visit your main config file (.emacs or init.el)
 ;; "<leader> f f"      Open a file in a buffer
 ;; "<leader> f s"      Save a buffer (safes the file)
 ;; "<leader> b k"      Kill a buffer (closes the file)
