@@ -2047,7 +2047,7 @@ buffer."
 ;; Common window management commands under the leader key
 (keymap-set ctl-z-w-map "SPC" #'toggle-window-dedicated)
 (keymap-set ctl-z-w-map "="   #'balance-windows)
-(when (>= 31 emacs-major-version)
+(when (>= emacs-major-version 31)
   (keymap-set ctl-z-w-map "]"   #'window-layout-rotate-clockwise)
   (keymap-set ctl-z-w-map "["   #'window-layout-rotate-anticlockwise)
   (keymap-set ctl-z-w-map "|"   #'window-layout-flip-leftright)
